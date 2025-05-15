@@ -62,7 +62,7 @@ export default function LoginForm({ className, ...props }) {
           setError(null); // Clear any previous error
           // You can redirect the user or perform any other action here
           // For example, redirect to the dashboard or home page
-          navigate("/beranda-mini-project");
+          navigate("/mini-project/beranda");
         }
         // You can handle the response here
       })

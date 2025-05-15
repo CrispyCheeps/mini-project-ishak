@@ -7,6 +7,9 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import BerandaPage from "./pages/BerandaPage";
 import PrivateRoute from "./routes/PrivateRoute";
+import UserList from "./pages/UserList";
+import MainPage from "./pages/MainPage";
+import { PaginationProvider } from "./context/PaginationContext";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -20,13 +23,24 @@ function App() {
           <Route path="/" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route
-            path="/beranda-mini-project"
+            path="/mini-project"
             element={
               <PrivateRoute>
-                <BerandaPage />
+                <MainPage />
               </PrivateRoute>
             }
-          />
+          >
+            <Route path="beranda" element={<BerandaPage />} />
+
+            <Route
+              path="user-list"
+              element={
+                <PaginationProvider>
+                  <UserList />
+                </PaginationProvider>
+              }
+            />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
