@@ -22,6 +22,6 @@ If you are developing a production application, we recommend using TypeScript wi
 ## Fitur
 - Login 
 - Register 
-- Protected routes
+- Protected routes (make sure users has logged in and token saved in the local storage)
 - List users (pagination)
 - Detail user
